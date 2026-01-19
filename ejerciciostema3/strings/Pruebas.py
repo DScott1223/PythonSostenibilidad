@@ -50,6 +50,27 @@ def funcionOscar(frase):
     return salida
 
 
-print(funcionOscar("Va a tener que ser esta tarde"))
+# print(funcionOscar("Va a tener que ser esta tarde"))
 
-#comentario de prueba
+def ejercicioIvanPenia(cadena):
+    cadena = cadena.lower()
+    cadenaSplit = cadena.split()
+    maximaLongitud = 0
+    cadenaNueva = ""
+    contadorLetraFinal = 0
+    for x in cadenaSplit:
+        if len(x) > maximaLongitud:
+            maximaLongitud = len(x)
+            palabraLongitud = x
+        if(len(x) % 2 == 0):
+            cadenaNueva += " "+x
+        else:
+            cadenaNueva += " "+x[::-1]
+    for x in cadena:
+        if cadena[-1:] == x:
+            contadorLetraFinal += 1
+    return ("Frase original: " + cadena + "\nLa palabra más larga encontrada: " + palabraLongitud +
+            "\nFrase transformada: " + cadenaNueva + "\nApariciones última letra: " + str(contadorLetraFinal))
+
+
+print(ejercicioIvanPenia("palabra tener cierra palabraGrande"))
